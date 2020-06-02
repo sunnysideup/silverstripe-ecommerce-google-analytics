@@ -15,7 +15,8 @@
         "seo"
     ],
     "require": {
-        "sunnysideup/ecommerce": ">=11.0"
+        "sunnysideup/ecommerce":                    ">=11.0",
+        "theiconic/php-ga-measurement-protocol":    "^2.7"
     },
     "license": "BSD-3-Clause",
     "authors": [
@@ -31,10 +32,11 @@
         }
     ],
     "extra": {
+        "installer-name": "ecommerce-google-analytics"
     },
     "autoload": {
         "psr-4": {
-            "Sunnysideup\\EcommerceGoogleAnalytics\\": "src/"
+            "Sunnysideup\\EcommerceGoogleAnalytics\\": "code/"
         }
     }
 }

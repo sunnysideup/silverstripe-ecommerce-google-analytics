@@ -1,3 +1,14 @@
 ---
 Name: ecommerce-google-analytics
 ---
+Order:
+  extensions:
+    - AnalyticsTransactionReversal
+
+CheckoutPage:
+  extensions:
+    - CheckoutPageDataExtension
+
+CheckoutPage_Controller:
+  extensions:
+    - CheckoutPageExtensionController
