@@ -7,12 +7,15 @@
         "CMS",
         "Silverstripe",
         "ecommerce",
+        "e-commerce",
+        "shop",
         "google",
         "analytics",
         "tracking",
         "seo"
     ],
     "require": {
+        "sunnysideup/ecommerce": ">=11.0"
     },
     "license": "BSD-3-Clause",
     "authors": [
