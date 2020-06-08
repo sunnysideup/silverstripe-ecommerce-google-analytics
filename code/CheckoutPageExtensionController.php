@@ -24,14 +24,16 @@ class CheckoutPageExtensionController extends Extension
                 foreach ($orderItems as $orderItem) {
                     $product = Product::get()->byID($orderItem->BuyableID);
                     $sku = $product->InternalItemID ? $product->InternalItemID : $product->ID;
-                    $items .= 
+                    $orderItemName = preg_replace("/\r|\n/", "", $orderItem->TableTitle());
+                    $category = preg_replace("/\r|\n/", "", $product->TopParentGroup()->Title);
+                    $items .=
                         'ga(
-                            \'ecommerce:addItem\', 
+                            \'ecommerce:addItem\',
                             {
                                 \'id\': \''.$owner->currentOrder->ID.'\',
-                                \'name\': \''.$orderItem->TableTitle().'\',
+                                \'name\': \''.$orderItemName.'\',
                                 \'sku\': \''.$sku.'\',
-                                \'category\': \''. $product->TopParentGroup()->Title.'\',
+                                \'category\': \''. $category.'\',
                                 \'price\': \''.$orderItem->CalculatedTotal.'\',
                                 \'quantity\': \''.$orderItem->Quantity.'\',
                             }
@@ -41,6 +43,7 @@ class CheckoutPageExtensionController extends Extension
                 jQuery("#OrderForm_OrderForm").on(
                     "submit",
                     function(e){
+                        console.log(e);
                         '.$var.'(\'require\', \'ecommerce\');
                         '.$var.'(
                             \'ecommerce:addTransaction\',
@@ -53,8 +56,7 @@ class CheckoutPageExtensionController extends Extension
                         '.$items.'
                         '.$var.'(\'ecommerce:send\');
                     }
-                );
-                ';
+                );';
                 Requirements::customScript($js, 'GoogleAnalyticsEcommerce');
             }
         }
