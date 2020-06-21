@@ -12,3 +12,6 @@ CheckoutPage:
 CheckoutPage_Controller:
   extensions:
     - CheckoutPageExtensionController
+
+CheckoutPageExtensionController:
+  include_product_items: true

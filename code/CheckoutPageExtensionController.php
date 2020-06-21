@@ -21,23 +21,25 @@ class CheckoutPageExtensionController extends Extension
                 }
                 $orderItems = $owner->currentOrder->OrderItems();
                 $items = '';
-                foreach ($orderItems as $orderItem) {
-                    $product = Product::get()->byID($orderItem->BuyableID);
-                    $sku = $product->InternalItemID ? $product->InternalItemID : $product->ID;
-                    $orderItemName = preg_replace("/\r|\n/", "", $orderItem->TableTitle());
-                    $category = preg_replace("/\r|\n/", "", $product->TopParentGroup()->Title);
-                    $items .=
-                        'ga(
-                            \'ecommerce:addItem\',
-                            {
-                                \'id\': \''.$owner->currentOrder->ID.'\',
-                                \'name\': \''.$orderItemName.'\',
-                                \'sku\': \''.$sku.'\',
-                                \'category\': \''. $category.'\',
-                                \'price\': \''.$orderItem->CalculatedTotal.'\',
-                                \'quantity\': \''.$orderItem->Quantity.'\',
-                            }
-                        );';
+                if(Config::inst()->get(CheckoutPageExtensionController::class, 'include_product_items')){
+                    foreach ($orderItems as $orderItem) {
+                        $product = Product::get()->byID($orderItem->BuyableID);
+                        $sku = $product->InternalItemID ? $product->InternalItemID : $product->ID;
+                        $orderItemName = preg_replace("/\r|\n/", "", $orderItem->TableTitle());
+                        $category = preg_replace("/\r|\n/", "", $product->TopParentGroup()->Title);
+                        $items .=
+                            'ga(
+                                \'ecommerce:addItem\',
+                                {
+                                    \'id\': \''.$owner->currentOrder->ID.'\',
+                                    \'name\': \''.$orderItemName.'\',
+                                    \'sku\': \''.$sku.'\',
+                                    \'category\': \''. $category.'\',
+                                    \'price\': \''.$orderItem->CalculatedTotal.'\',
+                                    \'quantity\': \''.$orderItem->Quantity.'\',
+                                }
+                            );';
+                    }
                 }
                 $js = '
                 jQuery("#OrderForm_OrderForm").on(
