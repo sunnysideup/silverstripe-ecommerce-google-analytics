@@ -9,7 +9,7 @@ CheckoutPage:
   extensions:
     - CheckoutPageDataExtension
 
-CheckoutPage_Controller:
+CheckoutPageController:
   extensions:
     - CheckoutPageExtensionController
 
