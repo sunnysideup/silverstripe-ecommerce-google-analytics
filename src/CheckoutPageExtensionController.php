@@ -2,32 +2,14 @@
 
 namespace Sunnysideup\EcommerceGoogleAnalytics;
 
-
-
-
-
-
-
-
 use SilverStripe\Control\Director;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Extension;
+use SilverStripe\View\Requirements;
 use Sunnysideup\Ecommerce\Config\EcommerceConfig;
 use Sunnysideup\Ecommerce\Model\Money\EcommerceCurrency;
-use SilverStripe\Core\Config\Config;
 use Sunnysideup\Ecommerce\Pages\Product;
-use SilverStripe\View\Requirements;
-use SilverStripe\Core\Extension;
 
-
-
-
-/**
-  * ### @@@@ START REPLACEMENT @@@@ ###
-  * WHY: automated upgrade
-  * OLD:  extends Extension (ignore case)
-  * NEW:  extends Extension (COMPLEX)
-  * EXP: Check for use of $this->anyVar and replace with $this->anyVar[$this->owner->ID] or consider turning the class into a trait
-  * ### @@@@ STOP REPLACEMENT @@@@ ###
-  */
 class CheckoutPageExtensionController extends Extension
 {
     /**
@@ -49,22 +31,22 @@ class CheckoutPageExtensionController extends Extension
                 }
                 $orderItems = $owner->currentOrder->OrderItems();
                 $items = '';
-                if(Config::inst()->get(CheckoutPageExtensionController::class, 'include_product_items')){
+                if (Config::inst()->get(CheckoutPageExtensionController::class, 'include_product_items')) {
                     foreach ($orderItems as $orderItem) {
                         $product = Product::get()->byID($orderItem->BuyableID);
-                        $sku = $product->InternalItemID ? $product->InternalItemID : $product->ID;
-                        $orderItemName = preg_replace("/\r|\n/", "", $orderItem->TableTitle());
-                        $category = preg_replace("/\r|\n/", "", $product->TopParentGroup()->Title);
+                        $sku = $product->InternalItemID ?: $product->ID;
+                        $orderItemName = preg_replace("/\r|\n/", '', $orderItem->TableTitle());
+                        $category = preg_replace("/\r|\n/", '', $product->TopParentGroup()->Title);
                         $items .=
                             'ga(
                                 \'ecommerce:addItem\',
                                 {
-                                    \'id\': \''.$owner->currentOrder->ID.'\',
-                                    \'name\': \''.$orderItemName.'\',
-                                    \'sku\': \''.$sku.'\',
-                                    \'category\': \''. $category.'\',
-                                    \'price\': \''.$orderItem->CalculatedTotal.'\',
-                                    \'quantity\': \''.$orderItem->Quantity.'\',
+                                    \'id\': \'' . $owner->currentOrder->ID . '\',
+                                    \'name\': \'' . $orderItemName . '\',
+                                    \'sku\': \'' . $sku . '\',
+                                    \'category\': \'' . $category . '\',
+                                    \'price\': \'' . $orderItem->CalculatedTotal . '\',
+                                    \'quantity\': \'' . $orderItem->Quantity . '\',
                                 }
                             );';
                     }
@@ -74,17 +56,17 @@ class CheckoutPageExtensionController extends Extension
                     "submit",
                     function(e){
                         console.log(e);
-                        '.$var.'(\'require\', \'ecommerce\');
-                        '.$var.'(
+                        ' . $var . '(\'require\', \'ecommerce\');
+                        ' . $var . '(
                             \'ecommerce:addTransaction\',
                             {
-                                \'id\': \''.$owner->currentOrder->ID.'\',
-                                \'revenue\': \''.$owner->currentOrder->getSubTotal().'\',
-                                \'currency\': \''.$currencyUsedString.'\'
+                                \'id\': \'' . $owner->currentOrder->ID . '\',
+                                \'revenue\': \'' . $owner->currentOrder->getSubTotal() . '\',
+                                \'currency\': \'' . $currencyUsedString . '\'
                             }
                         );
-                        '.$items.'
-                        '.$var.'(\'ecommerce:send\');
+                        ' . $items . '
+                        ' . $var . '(\'ecommerce:send\');
                     }
                 );';
                 Requirements::customScript($js, 'GoogleAnalyticsEcommerce');
@@ -92,4 +74,3 @@ class CheckoutPageExtensionController extends Extension
         }
     }
 }
-
