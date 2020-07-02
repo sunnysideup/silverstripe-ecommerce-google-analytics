@@ -15,8 +15,8 @@
         "seo"
     ],
     "require": {
-        "sunnysideup/ecommerce":                    ">=11.0",
-        "theiconic/php-ga-measurement-protocol":    "^2.7"
+        "sunnysideup/ecommerce": ">=11.0",
+        "theiconic/php-ga-measurement-protocol": "^2.7"
     },
     "license": "BSD-3-Clause",
     "authors": [
