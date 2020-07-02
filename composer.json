@@ -32,9 +32,7 @@
             "role": "assistant"
         }
     ],
-    "extra": {
-        "installer-name": "ecommerce-google-analytics"
-    },
+    "extra": [],
     "autoload": {
         "psr-4": {
             "Sunnysideup\\EcommerceGoogleAnalytics\\": "code/"
