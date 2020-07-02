@@ -1,0 +1,4 @@
+mappings:
+  AnalyticsTransactionReversal: Sunnysideup\EcommerceGoogleAnalytics\AnalyticsTransactionReversal
+  CheckoutPageDataExtension: Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageDataExtension
+  CheckoutPageExtensionController: Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageExtensionController

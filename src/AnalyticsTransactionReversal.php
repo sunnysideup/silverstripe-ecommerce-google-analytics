@@ -1,5 +1,14 @@
 <?php
 
+namespace Sunnysideup\EcommerceGoogleAnalytics;
+
+use DataExtension;
+use Analytics;
+use Config;
+use CheckoutPage;
+use Director;
+
+
 
 /**
   * ### @@@@ START REPLACEMENT @@@@ ###

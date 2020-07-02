@@ -1,5 +1,12 @@
 <?php
 
+namespace Sunnysideup\EcommerceGoogleAnalytics;
+
+use DataExtension;
+use FieldList;
+use CheckboxField;
+
+
 
 /**
   * ### @@@@ START REPLACEMENT @@@@ ###

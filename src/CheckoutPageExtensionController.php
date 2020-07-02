@@ -1,5 +1,16 @@
 <?php
 
+namespace Sunnysideup\EcommerceGoogleAnalytics;
+
+use Extension;
+use Director;
+use EcommerceConfig;
+use EcommerceCurrency;
+use Config;
+use Product;
+use Requirements;
+
+
 
 /**
   * ### @@@@ START REPLACEMENT @@@@ ###
