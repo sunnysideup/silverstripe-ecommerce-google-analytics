@@ -2,11 +2,16 @@
 
 namespace Sunnysideup\EcommerceGoogleAnalytics;
 
-use DataExtension;
+
 use Analytics;
-use Config;
-use CheckoutPage;
-use Director;
+
+
+
+use SilverStripe\Core\Config\Config;
+use Sunnysideup\Ecommerce\Pages\CheckoutPage;
+use SilverStripe\Control\Director;
+use SilverStripe\ORM\DataExtension;
+
 
 
 

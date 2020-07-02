@@ -2,13 +2,21 @@
 
 namespace Sunnysideup\EcommerceGoogleAnalytics;
 
-use Extension;
-use Director;
-use EcommerceConfig;
-use EcommerceCurrency;
-use Config;
-use Product;
-use Requirements;
+
+
+
+
+
+
+
+use SilverStripe\Control\Director;
+use Sunnysideup\Ecommerce\Config\EcommerceConfig;
+use Sunnysideup\Ecommerce\Model\Money\EcommerceCurrency;
+use SilverStripe\Core\Config\Config;
+use Sunnysideup\Ecommerce\Pages\Product;
+use SilverStripe\View\Requirements;
+use SilverStripe\Core\Extension;
+
 
 
 

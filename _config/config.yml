@@ -1,17 +1,14 @@
 ---
 Name: ecommerce-google-analytics
 ---
-Order:
+Sunnysideup\Ecommerce\Model\Order:
   extensions:
-    - AnalyticsTransactionReversal
-
-CheckoutPage:
+    - Sunnysideup\EcommerceGoogleAnalytics\AnalyticsTransactionReversal
+Sunnysideup\Ecommerce\Pages\CheckoutPage:
   extensions:
-    - CheckoutPageDataExtension
-
-CheckoutPageController:
+    - Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageDataExtension
+Sunnysideup\Ecommerce\Pages\CheckoutPageController:
   extensions:
-    - CheckoutPageExtensionController
-
-CheckoutPageExtensionController:
+    - Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageExtensionController
+Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageExtensionController:
   include_product_items: true

@@ -2,9 +2,13 @@
 
 namespace Sunnysideup\EcommerceGoogleAnalytics;
 
-use DataExtension;
-use FieldList;
-use CheckboxField;
+
+
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\ORM\DataExtension;
+
 
 
 
