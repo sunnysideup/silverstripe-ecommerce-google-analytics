@@ -1,0 +1,5 @@
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    AnalyticsTransactionReversal: Sunnysideup\EcommerceGoogleAnalytics\AnalyticsTransactionReversal
+    CheckoutPageDataExtension: Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageDataExtension
+    CheckoutPageExtensionController: Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageExtensionController
