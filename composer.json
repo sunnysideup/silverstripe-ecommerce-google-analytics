@@ -35,7 +35,7 @@
     "extra": [],
     "autoload": {
         "psr-4": {
-            "Sunnysideup\\EcommerceGoogleAnalytics\\": "code/"
+            "Sunnysideup\\EcommerceGoogleAnalytics\\": "src/"
         }
     }
 }
