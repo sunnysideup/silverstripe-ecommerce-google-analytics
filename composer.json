@@ -1,6 +1,6 @@
 {
     "name": "sunnysideup/ecommerce-google-analytics",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "description": "Add Google Analytics order tracking to your silverstripe e-commerce website",
     "keywords": [
         "Silverstripe-CMS",
