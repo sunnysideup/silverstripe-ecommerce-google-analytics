@@ -64,3 +64,4 @@ class CheckoutPageExtensionController extends Extension
         }
     }
 }
+

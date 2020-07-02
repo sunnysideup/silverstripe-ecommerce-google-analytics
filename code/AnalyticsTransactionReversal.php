@@ -1,7 +1,5 @@
 <?php
 
-use TheIconic\Tracking\GoogleAnalytics\Analytics;
-
 class AnalyticsTransactionReversal extends DataExtension
 {
 
