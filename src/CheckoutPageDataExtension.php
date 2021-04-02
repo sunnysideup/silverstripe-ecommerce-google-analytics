@@ -31,7 +31,5 @@ class CheckoutPageDataExtension extends DataExtension
                 'Enable E-commerce Google Analytics.  Make sure it is turned on in your Google Analytics account.'
             )
         );
-
-        return $fields;
     }
 }
