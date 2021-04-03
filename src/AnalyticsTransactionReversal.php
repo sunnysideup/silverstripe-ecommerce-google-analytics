@@ -25,13 +25,15 @@ class AnalyticsTransactionReversal extends DataExtension
             $analytics = new Analytics();
             $analytics->setProtocolVersion('1')
                 ->setTrackingId($this->getTrackingID())
-                ->setUserId(base64_encode($memberID));
+                ->setUserId(base64_encode($memberID))
+            ;
 
             $analytics
                 ->setTransactionId($orderID) // transaction id. required
                 ->setRevenue($total)
                 ->setDebug($this->isTestMode())
-                ->sendTransaction();
+                ->sendTransaction()
+            ;
 
             $orderItems = $order->OrderItems();
             foreach ($orderItems as $orderItem) {
@@ -40,7 +42,8 @@ class AnalyticsTransactionReversal extends DataExtension
                     ->setItemPrice($orderItem->CalculatedTotal)
                     ->setItemQuantity($this->negateValue($orderItem->Quantity))
                     ->setDebug($this->isTestMode())
-                    ->sendItem();
+                    ->sendItem()
+                ;
             }
         }
     }
@@ -58,6 +61,7 @@ class AnalyticsTransactionReversal extends DataExtension
     public function isAnalyticsEnabled()
     {
         $checkoutPage = CheckoutPage::get()->first();
+
         return $checkoutPage->EnableGoogleAnalytics && (Director::isLive() || $this->isTestMode());
     }
 
