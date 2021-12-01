@@ -33,7 +33,7 @@ class CheckoutPageExtensionController extends Extension
                 $items = '';
                 if (Config::inst()->get(CheckoutPageExtensionController::class, 'include_product_items')) {
                     foreach ($orderItems as $orderItem) {
-                        $product = Product::get()->byID($orderItem->BuyableID);
+                        $product = Product::get_by_id($orderItem->BuyableID);
                         $sku = $product->InternalItemID ?: $product->ID;
                         $orderItemName = preg_replace("#\r|\n#", '', $orderItem->TableTitle());
                         $category = preg_replace("#\r|\n#", '', $product->TopParentGroup()->Title);
