@@ -35,8 +35,13 @@ class CheckoutPageExtensionController extends Extension
                     foreach ($orderItems as $orderItem) {
                         $product = Product::get_by_id($orderItem->BuyableID);
                         $sku = $product->InternalItemID ?: $product->ID;
+                        $topParent = $product->TopParentGroup();
+                        $catetory = 'Unknown';
+                        if($topParent) {
+
+                        }
                         $orderItemName = preg_replace("#\r|\n#", '', (string) $orderItem->TableTitle());
-                        $category = preg_replace("#\r|\n#", '', (string) $product->TopParentGroup()->Title);
+                        $category = preg_replace("#\r|\n#", '', (string) $category);
                         $items .=
                             'ga(
                                 \'ecommerce:addItem\',
