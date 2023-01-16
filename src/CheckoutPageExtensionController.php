@@ -38,7 +38,7 @@ class CheckoutPageExtensionController extends Extension
                         $topParent = $product->TopParentGroup();
                         $catetory = 'Unknown';
                         if($topParent) {
-
+                            $category = $topParent->Title;
                         }
                         $orderItemName = preg_replace("#\r|\n#", '', (string) $orderItem->TableTitle());
                         $category = preg_replace("#\r|\n#", '', (string) $category);
