@@ -35,8 +35,8 @@ class CheckoutPageExtensionController extends Extension
                     foreach ($orderItems as $orderItem) {
                         $product = Product::get_by_id($orderItem->BuyableID);
                         $sku = $product->InternalItemID ?: $product->ID;
+                        $category = 'Unknown';
                         $topParent = $product->TopParentGroup();
-                        $catetory = 'Unknown';
                         if($topParent) {
                             $category = $topParent->Title;
                         }
