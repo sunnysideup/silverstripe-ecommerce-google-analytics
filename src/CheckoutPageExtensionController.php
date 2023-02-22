@@ -33,11 +33,12 @@ class CheckoutPageExtensionController extends Extension
                 $items = '';
                 if (Config::inst()->get(CheckoutPageExtensionController::class, 'include_product_items')) {
                     foreach ($orderItems as $orderItem) {
+                        /** @var Product $product */
                         $product = Product::get_by_id($orderItem->BuyableID);
                         $sku = $product->InternalItemID ?: $product->ID;
                         $category = 'Unknown';
                         $topParent = $product->TopParentGroup();
-                        if($topParent) {
+                        if ($topParent) {
                             $category = $topParent->Title;
                         }
                         $orderItemName = preg_replace("#\r|\n#", '', (string) $orderItem->TableTitle());
@@ -57,7 +58,8 @@ class CheckoutPageExtensionController extends Extension
                     }
                 }
                 $js = '
-                jQuery("#OrderForm_OrderForm").on(
+                const ecommerceFormForGA = document.getElementById("OrderForm_OrderForm");
+                ecommerceFormForGA.addEventListener(
                     "submit",
                     function(e){
                         console.log(e);
