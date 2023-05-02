@@ -10,6 +10,11 @@ use Sunnysideup\Ecommerce\Config\EcommerceConfig;
 use Sunnysideup\Ecommerce\Model\Money\EcommerceCurrency;
 use Sunnysideup\Ecommerce\Pages\Product;
 
+/**
+ * Class \Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageExtensionController
+ *
+ * @property \Sunnysideup\Ecommerce\Pages\CheckoutPageController|\Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageExtensionController $owner
+ */
 class CheckoutPageExtensionController extends Extension
 {
     /**

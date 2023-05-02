@@ -6,6 +6,12 @@ use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 
+/**
+ * Class \Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageDataExtension
+ *
+ * @property \Sunnysideup\Ecommerce\Pages\CheckoutPage|\Sunnysideup\EcommerceGoogleAnalytics\CheckoutPageDataExtension $owner
+ * @property bool $EnableGoogleAnalytics
+ */
 class CheckoutPageDataExtension extends DataExtension
 {
     /**

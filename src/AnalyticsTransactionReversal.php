@@ -8,6 +8,11 @@ use SilverStripe\ORM\DataExtension;
 use Sunnysideup\Ecommerce\Pages\CheckoutPage;
 use TheIconic\Tracking\GoogleAnalytics\Analytics;
 
+/**
+ * Class \Sunnysideup\EcommerceGoogleAnalytics\AnalyticsTransactionReversal
+ *
+ * @property \Sunnysideup\Ecommerce\Model\Order|\Sunnysideup\EcommerceGoogleAnalytics\AnalyticsTransactionReversal $owner
+ */
 class AnalyticsTransactionReversal extends DataExtension
 {
     private static $test_mode = false;
