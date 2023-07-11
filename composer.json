@@ -17,7 +17,7 @@
     "require": {
         "sunnysideup/ecommerce": "*",
         "theiconic/php-ga-measurement-protocol": "^2.7",
-        "silverstripe/recipe-cms": "^4.4"
+        "silverstripe/recipe-cms": "^4.0 || ^5.0"
     },
     "license": "BSD-3-Clause",
     "authors": [
