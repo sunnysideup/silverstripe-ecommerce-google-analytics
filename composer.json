@@ -1,41 +1,41 @@
 {
-    "name": "sunnysideup/ecommerce-google-analytics",
-    "type": "silverstripe-vendormodule",
-    "description": "Add Google Analytics order tracking to your silverstripe e-commerce website",
-    "keywords": [
-        "Silverstripe-CMS",
-        "CMS",
-        "Silverstripe",
-        "ecommerce",
-        "e-commerce",
-        "shop",
-        "google",
-        "analytics",
-        "tracking",
-        "seo"
-    ],
-    "require": {
-        "sunnysideup/ecommerce": "*",
-        "theiconic/php-ga-measurement-protocol": "^2.7",
-        "silverstripe/recipe-cms": "^4.0 || ^5.0"
+  "name": "sunnysideup/ecommerce-google-analytics",
+  "type": "silverstripe-vendormodule",
+  "description": "Add Google Analytics order tracking to your silverstripe e-commerce website",
+  "keywords": [
+    "Silverstripe-CMS",
+    "CMS",
+    "Silverstripe",
+    "ecommerce",
+    "e-commerce",
+    "shop",
+    "google",
+    "analytics",
+    "tracking",
+    "seo"
+  ],
+  "require": {
+    "sunnysideup/ecommerce": "5.x-dev",
+    "theiconic/php-ga-measurement-protocol": "^2.7",
+    "silverstripe/recipe-cms": "^4.0 || ^5.0"
+  },
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Shane Watters",
+      "email": "modules@sunnysideup.co.nz",
+      "role": "lead developer"
     },
-    "license": "BSD-3-Clause",
-    "authors": [
-        {
-            "name": "Shane Watters",
-            "email": "modules@sunnysideup.co.nz",
-            "role": "lead developer"
-        },
-        {
-            "name": "Nicolaas Francken",
-            "email": "modules@sunnysideup.co.nz",
-            "role": "assistant"
-        }
-    ],
-    "extra": [],
-    "autoload": {
-        "psr-4": {
-            "Sunnysideup\\EcommerceGoogleAnalytics\\": "src/"
-        }
+    {
+      "name": "Nicolaas Francken",
+      "email": "modules@sunnysideup.co.nz",
+      "role": "assistant"
     }
+  ],
+  "extra": [],
+  "autoload": {
+    "psr-4": {
+      "Sunnysideup\\EcommerceGoogleAnalytics\\": "src/"
+    }
+  }
 }
